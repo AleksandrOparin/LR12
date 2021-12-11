@@ -1,0 +1,39 @@
+<% provide :title, 'Palindromes output' %>
+
+<section class="py-5 text-center container fst-italic"> 
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light font-weight-bold"> Result </h1>
+            <p class="lead text-muted fs-4"> Числа, сами являющиеся палиндромами и при возведении в квадрат, образующие палиндромы (до n, введённого ранее).</p>
+            <div class="col-12 fs-4">
+                <% if @error %>
+                    <p> <%= @error %> </p>
+                <% else %>
+                    <table class="table text-center fs-5">
+                        <thead>
+                            <tr>
+                                <th> Number </th>
+                                <th> The square of the number </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @result.each do |number| %>
+                                <tr>
+                                    <td> <%= number %> </td>
+                                    <td> <%= number**2 %> </td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> Amount of numbers: </span>
+                        </div>
+                        <input type="text" class="form-control" id="Result" placeholder="Amount of numbers" value="<%= @result.length %>" readonly>
+                    </div>
+                <% end %>
+                <p class="text-center text-muted mt-3 fs-4 "><u><%= link_to "Back to entering a number", root_path %></u> </p>
+            </div>
+        </div>
+    </div>
+</section>

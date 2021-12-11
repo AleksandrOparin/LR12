@@ -1,0 +1,48 @@
+<% currently_at '#' %>
+
+<section class="py-5 text-center container fst-italic"> 
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light fs-1"> <%= @user.username %> </h1>
+      <% if notice %>
+        <div id="notice" class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+      <div class="col-12">
+
+        <!-- Login -->
+        <div class="form-outline mb-4">
+          <input type="text" class="form-control" value="<%= @user.username %>" readonly />
+          <label class="form-label">Login</label>
+        </div>
+
+        <!-- Email -->
+        <div class="form-outline mb-4">
+          <input type="email" class="form-control" value="<%= @user.email %>" readonly />
+          <label class="form-label">Email address</label>
+        </div>
+
+        <% if current_user == @user %>
+          <hr/>
+          <h4 class="text-center font-weight-bold mx-3">Account actions</h4>
+
+
+          <!-- Buttons -->
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-info btn-block mb-4" %> 
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <%= link_to 'Delete account', @user, class: "btn btn-danger btn-block mb-4", method: :delete, data: { confirm: 'Are you sure?' } %> 
+              </div>
+            </div>
+          </div>
+        <% end %>  
+      </div>
+    </div>
+  </div>
+</section>

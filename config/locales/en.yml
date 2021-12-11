@@ -30,4 +30,16 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        password: "Password"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "Please enter a password"
+
+
+

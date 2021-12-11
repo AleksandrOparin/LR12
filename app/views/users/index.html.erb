@@ -1,0 +1,34 @@
+<% provide :title, 'All Users' %>
+<% currently_at 'Users' %>
+
+<p id="notice"><%= notice %></p>
+
+<section class="py-5 text-center container fst-italic"> 
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light fs-1"> All users </h1>
+      <div class="col-12 fs-2">
+
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th colspan="1"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td valign="middle" class="fs-5"><%= user.username %></td>
+                <td valign="middle" class="fs-5"><%= user.email %></td>
+                <td valign="middle" class="fs-5"><%= link_to 'Show', user %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

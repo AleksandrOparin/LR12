@@ -1,0 +1,17 @@
+<% provide :title, 'Palindromes input' %>
+<% currently_at 'Home' %>
+
+<form action="<%= palindrome_output_url %>">
+    <section class="py-5 text-center container fst-italic">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light"> Entering a number </h1>
+                <p class="lead text-muted"> Написать программу, определяющую, сколько из чисел в диапазоне от 0 до n (n вводится с клавиатуры), сами являясь палиндромами, при возведении в квадрат, образуют палиндромы. </p>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" name="InputNumber" placeholder="Enter a number" pattern="[0-9]+" min="0" />
+                    <button class="btn btn-outline-primary" type="submit" data-mdb-ripple-color="dark"> Input </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
